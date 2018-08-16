@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
@@ -7,10 +7,23 @@ from django.views import generic
 class SignupView():
     pass
 '''
+'''
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'holiday/signup.html'
+'''
+def signup(request):
+    if (request.method == 'POST'):
+        form = UserCreationForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return redirect('/holiday')
+    else:
+        form = UserCreationForm()
+        args = {'form':form}
+        return render(request, 'holiday/signup.html', args)
+
 
 def home(request):
     numbers = [1, 2, 3, 4, 5]
