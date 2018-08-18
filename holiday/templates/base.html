@@ -50,7 +50,13 @@
                 <!-- <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
                 <li><a href="../navbar-static-top/">Static top</a></li>
                 <li><a href="../navbar-fixed-top/">Fixed top</a></li> -->
+                {% if user.is_authenticated %}
+                <li><a href="/holiday/">Hi {{user.username}}!</a></li>
+                <li><a href="/holiday/logout"> Logout </a></li>
+                {% else %}
                 <li><a href="/holiday/signup">Register</a></li>
+                <li><a href="/holiday/login">Login</a></li>
+                {% endif %}
               </ul>
             </div><!--/.nav-collapse -->
           </div><!--/.container-fluid -->
