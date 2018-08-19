@@ -7,5 +7,7 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'), 
     path('login/', login, {'template_name' : 'holiday/login.html'}),
     path('logout/', logout, {'template_name' : 'holiday/logout.html'}),
-    path('holidays/', views.holidays_view, name='holidays')
+    path('holidays/', views.holidays_view, name='holidays'),
+    path('flights/' ,views.flights_view, name='flights'),
+    path('hotels/', views.hotels_view, name='hotels')
 ]

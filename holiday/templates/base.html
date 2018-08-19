@@ -18,16 +18,18 @@
           <div class="container-fluid">
             <div class="navbar-header">
               <a class="navbar-brand" href="/holiday/holidays">Holidays</a>
+              <a class="navbar-brand" href="/holiday/flights">Flights</a>
+              <a class="navbar-brand" href="/holiday/hotels">Hotels</a>
             </div>
-            <ul class="nav">
+            <ul class="nav navbar-header">
               {% if user.is_authenticated %}
-              <li><a href="/holiday/">Hi {{user.username}}!</a></li>
+              <li><a class="navbar-brand" href="/holiday/">Hi {{user.username}}!</a></li>
               &nbsp;&nbsp;
-              <li><a href="/holiday/logout"> Logout </a></li>
+              <li><a class="navbar-brand" href="/holiday/logout"> Logout </a></li>
               {% else %}
-              <li><a href="/holiday/signup">Register</a></li>
+              <li><a class="navbar-brand" href="/holiday/signup">Register</a></li>
               &nbsp;&nbsp;  
-              <li><a href="/holiday/login">Login</a></li>
+              <li><a class="navbar-brand" href="/holiday/login">Login</a></li>
               {% endif %}
             </ul>
           </div><!--/.container-fluid -->

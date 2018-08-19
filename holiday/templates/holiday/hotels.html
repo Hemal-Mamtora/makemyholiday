@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+   
+{% block head %}
+   <title>Hotels</title>
+{% endblock %}
+    
+{% block body %}
+{%for item in hotels%}
+<br>
+    <div class="card mx-auto" style="width: 50%;text-align: center">
+        <img class="img-card-top mx-auto" src="/static/holiday/images/{{item.photo}}" 
+        alt="{{item.photo}}" width="75%">
+        <div class="card-body">
+            <h2 class="card-title">{{item.name}}</h2>
+            <p class="card-text">Special Offer {{item.price_per_day}} Rs  per day !</p>
+            <p class="card-text">Location: {{item.address}}</p>
+            <p class="card-text">{{item.category}} rooms</p>
+        </div>
+    </div>
+{%endfor%}  
+{% endblock %}

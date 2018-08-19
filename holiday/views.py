@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from holiday.forms import RegistrationForm
-from holiday.models import Holidays
+from holiday.models import Holidays, Flight, Hotel
 # Create your views here.
 '''
 class SignupView():
@@ -40,3 +40,11 @@ def holidays_view(request):
     holidays = Holidays.objects.all()
     photo = holidays.values('photo')
     return render(request, 'holiday/holidays.html', {'holidays': holidays, 'photo':photo})
+
+def flights_view(request):
+    flights = Flight.objects.all()
+    return render(request, 'holiday/flights.html', {'flights' : flights})
+
+def hotels_view(request):
+    hotels = Hotel.objects.all()
+    return render(request, 'holiday/hotels.html', {'hotels' : hotels})
