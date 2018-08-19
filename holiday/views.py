@@ -38,4 +38,5 @@ def home(request):
 
 def holidays_view(request):
     holidays = Holidays.objects.all()
-    return render(request, 'holiday/holidays.html', {'holidays': holidays})
+    photo = holidays.values('photo')
+    return render(request, 'holiday/holidays.html', {'holidays': holidays, 'photo':photo})

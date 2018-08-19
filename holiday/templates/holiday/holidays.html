@@ -5,5 +5,12 @@
 {% endblock %}
     
 {% block body %}
-     {{holidays}}
+{%for item in holidays%}
+    <img src="/static/holiday/images/{{item.photo}}" alt="{{item.photo}}"><br>
+    {{item.description}}<br>
+    {{item.price}}<br>
+    {{item.highlights}}<br>
+    {{item.category}}<br>
+    {{item.days}}<br>
+{%endfor%}  
 {% endblock %}
