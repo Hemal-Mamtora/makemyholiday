@@ -13,6 +13,7 @@ class Holidays(models.Model):
 
 class Flight(models.Model):
     name = models.CharField(max_length=20)
+    photo = models.CharField(max_length = 100)
     to = models.CharField(max_length=20)
     fro = models.CharField(max_length=20)
     depart_time = models.TimeField()
@@ -24,6 +25,7 @@ class Flight(models.Model):
 
 class Hotel(models.Model):
     name = models.CharField(max_length=100)
+    photo = models.CharField(max_length = 100)
     price_per_day = models.FloatField()
     address = models.TextField()
     category = models.CharField(max_length = 5) #ac /nonac
