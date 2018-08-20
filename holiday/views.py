@@ -43,6 +43,12 @@ def holidays_view(request):
 
 def flights_view(request):
     flights = Flight.objects.all()
+    to = request.GET.get('to')
+    fro = request.GET.get('fro')
+    if to:
+        flights = flights.filter(to__icontains = to)
+    if fro:
+        flights = flights.filter(fro__icontains = fro)
     return render(request, 'holiday/flights.html', {'flights' : flights})
 
 def hotels_view(request):
