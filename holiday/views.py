@@ -54,3 +54,15 @@ def flights_view(request):
 def hotels_view(request):
     hotels = Hotel.objects.all()
     return render(request, 'holiday/hotels.html', {'hotels' : hotels})
+
+def holidays_detail_view(request, id):
+    holiday = Holidays.objects.get(pk= id)
+    return render(request, 'holiday/holiday_detail.html', {'holiday': holiday})
+
+def flights_detail_view(request, id):
+    flight = Flight.objects.get(pk= id)
+    return render(request, 'holiday/flight_detail.html', {'flight': flight})
+
+def hotels_detail_view(request, id):
+    hotel = Hotel.objects.get(pk = id)
+    return render(request, 'holiday/hotel_detail.html', {'hotel': hotel})

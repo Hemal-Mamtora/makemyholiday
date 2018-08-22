@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+   
+{% block head %}
+   <title>flight.name</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="card mx-auto" style="width: 75%;text-align: center">
+    <img class="img-card-top mx-auto" src="/static/holiday/images/{{flight.photo}}" 
+    alt="/static/holiday/images/{{flight.photo}}" width="75%">
+    <div class="card-body">
+        <h2 class="card-title">{{flight.name}}</h2>
+        <p class="card-text">{{flight.from}}</p>
+        <p class="card-text">{{flight.fro}}</p>
+        <p class="card-text">{{flight.to}}</p>
+        <p class="card-text">{{flight.depart_time}}</p>
+        <p class="card-text">{{flight.arrival_time}}</p>
+        <p class="card-text">{{flight.days}}</p>
+        <p class="card-text">{{flight.airlines}}</p>
+        <p class="card-text">{{flight.price}}</p>
+    </div>
+</div>
+<br>
+{% endblock %}

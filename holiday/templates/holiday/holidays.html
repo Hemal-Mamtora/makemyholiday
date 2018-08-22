@@ -16,6 +16,7 @@
             <p class="card-text">Special Offer {{item.price}} Rs</p>
             <p class="card-text">{{item.category}} (group)</p>
             <p class="card-text">{{item.days}} days</p>
+            <p class="card-text"><a href="{% url 'holidays:holidaydetail' item.id %}">Details</a></p>
         </div>
     </div>
 {%endif%}
@@ -31,6 +32,7 @@
                             <h2 class="card-title">{{project.name}}</h2>                
                             <p class="card-text">{{ project.highlights }}
                             <p class="card-text">For {{ project.category }}(group)</p>
+                            <p class="card-text"><a href="{% url 'holidays:holidaydetail' project.id %}">Details</a></p>
                       </div><!-- card content -->
                   </div><!-- card -->
               </div><!-- col-md-4 -->

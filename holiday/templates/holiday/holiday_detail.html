@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+   
+{% block head %}
+   <title>{{holiday.name}}</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="card mx-auto" style="width: 75%;text-align: center">
+    <img class="img-card-top mx-auto" src="/static/holiday/images/{{holiday.photo}}" 
+    alt="{{holiday.photo}}" width="75%">
+    <div class="card-body">
+        <h2 class="card-title">{{holiday.name}}</h2>
+        <p class="card-text">{{holiday.description}}</p>
+        <p class="card-text">{{holiday.category}} (group)</p>
+        <p class="card-text">Highlights: {{holiday.highlights}}</p>
+        <p class="card-text">{{holiday.days}} days</p>
+        <p class="card-text">Special Offer {{holiday.price}} Rs</p>
+    </div>
+</div>
+<br>
+{% endblock %}

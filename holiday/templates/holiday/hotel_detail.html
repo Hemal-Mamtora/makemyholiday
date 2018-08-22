@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+   
+{% block head %}
+   <title>{{hotel.name}}</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="card mx-auto" style="width: 75%;text-align: center">
+    <img class="img-card-top mx-auto" src="/static/holiday/images/{{hotel.photo}}" 
+    alt="{{hotel.photo}}" width="75%">
+    <div class="card-body">
+        <h2 class="card-title">{{hotel.name}}</h2>
+        <p class="card-text">Address: {{hotel.address}}</p>
+        <p class="card-text">{{hotel.category}} rooms available!</p>
+        <p class="card-text">Amenities: {{hotel.amenities}}</p>
+        <p class="card-text">Special Offer {{hotel.price_per_day}} Rs Per Day</p>
+    </div>
+</div>
+<br>
+{% endblock %}

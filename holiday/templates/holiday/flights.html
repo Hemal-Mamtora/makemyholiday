@@ -5,6 +5,7 @@
 {% endblock %}
     
 {% block body %}
+<br>
 <div style="text-align:center;">
 <form action="", method="get">
     To: <input type="text", name='to', id='to_id'>&nbsp;&nbsp;&nbsp;
@@ -20,12 +21,13 @@
               <div class="col-md-4" style="cursor: pointer">
                   <div class="card">
                         <img class="img-card-top mx-auto" src="/static/holiday/images/{{project.photo}}" 
-                        alt="{{item.photo}}" width="300px">
+                        alt="{{item.photo}}" width="300px" height="200px">
                       <div class="card-content">
                             <h2 class="card-title">{{project.name}}</h2>                
                             <p class="card-text">{{ project.price }} Rs. only</p>
                             <p class="card-text">From : {{ project.fro }}</p>
                             <p class="card-text">To : {{ project.to }}</p>
+                            <p class="card-text"><a href="{% url 'holidays:flightdetail' project.id %}">Details</a></p>
                       </div><!-- card content -->
                   </div><!-- card -->
               </div><!-- col-md-4 -->
